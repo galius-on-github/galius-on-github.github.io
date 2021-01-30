@@ -9,12 +9,12 @@
     >
 
     <title>tree</title>
-    
+
     <style>
         /**
          * Using the GPL-licensed font Nimbus Sans L!
          *
-         * See:  
+         * See:
          *   http://git.ghostscript.com/?p=user/tor/urw-base-12.git;a=blob_plain;f=NimbusSanL-Reg.otf;hb=refs/heads/master/
          */
         @font-face {
@@ -63,7 +63,23 @@
         }
 
     </style>
-</head> 
+
+    <script type='module'>
+    customElements.define('kinda-wholesome', class KindaWholesome extends HTMLElement {
+      constructor () {
+        super()
+
+        for (const wholesomeChild of this.children) {
+          wholesomeChild.addEventListener('click', function () {
+            alert(':P')
+          })
+        }
+      }
+    }, {
+      extends: 'section'
+    })
+    </script>
+</head>
 
 <body>
     <main>
@@ -71,6 +87,9 @@
         <ul>
             <li><a href='https://muenster.chgrs.link/bwLSNk4CNX7orEiM6/'>Münster bewegt</a></li>
         </ul>
+        <section is='kinda-wholesome'>
+          <img src="hm_wholesome.png" width='300px'>
+      </section>
     </main>
 </body>
 </html>
